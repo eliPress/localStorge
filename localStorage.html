@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var car = {
+      name: "mazda",
+      color: "orange",
+      year: 2020
+    }
+
+    console.log(car.color)
+    var tziva = "color";
+    // ישנה אפשרות לאסוף מידע ממאפיין באובייקט דרך מערך אסוציטיבי
+    console.log(car[tziva])
+    // לא ניתן בשיטה הזאת להוציא את המאפיין כמשתנה
+    console.log(car.tziva)
+
+    window.onload = function () {
+      if (localStorage["shem"]) {
+        id_h1.innerHTML = `Welcome ${localStorage["shem"]} to our site`;
+      }
+    }
+
+    function onSendNameClick() {
+      var name = id_input.value;
+      localStorage.setItem("shem", name);
+      id_h1.innerHTML = `Welcome ${localStorage["shem"]} to our site`;
+    }
+  </script>
+</head>
+
+<body>
+  <h1 id="id_h1">Welcome guest to our site</h1>
+  <h3>Enter your name:</h3>
+  <input type="text" id="id_input">
+  <button onclick="onSendNameClick()">send</button>
+</body>
+
+</html>
